@@ -1,7 +1,6 @@
 import "./Button.css";
 const Button = ({text, type, onClick}) => {
     let btnType = ["positive", "negative"].includes(type) ? type : "default";
-    console.log(btnType);
     switch (btnType) {
         case "positive":
             btnType = "is-success";
