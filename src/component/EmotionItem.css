@@ -1,0 +1,41 @@
+.EmotionItem {
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.EmotionItem img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.EmotionItem span{
+    font-size: 18px;
+}
+
+.EmotionItem-off{
+
+}
+
+.EmotionItem-on-1{
+    background-color: #64c964;
+}
+
+.EmotionItem-on-2{
+    background-color: #9dd772;
+}
+
+.EmotionItem-on-3{
+    background-color: #fdce17;
+}
+
+.EmotionItem-on-4{
+    background-color: #fd8446;
+}
+
+.EmotionItem-on-5{
+    background-color: #fd565f;
+}

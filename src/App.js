@@ -1,5 +1,4 @@
 import './App.css';
-import './style.css';
 import Home from "./pages/Home";
 import New from "./pages/New";
 import Diary from "./pages/Diary";

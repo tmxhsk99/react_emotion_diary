@@ -1,9 +1,9 @@
 import "./Editor.css";
-import {useState} from "react";
-import {getFormattedDate} from "../util";
+import {useEffect, useState} from "react";
+import {emotionList, getFormattedDate} from "../util";
 import Button from "../component/Button";
 import {useNavigate} from "react-router-dom";
-
+import EmotionItem from "./EmotionItem";
 const Editor = ({initData, onSubmit}) => {
     const navigate = useNavigate();
     const [state, setState] = useState({
@@ -11,13 +11,23 @@ const Editor = ({initData, onSubmit}) => {
         emotionId: 3,
         content: "",
     });
-    const handleChanageDate = (e) => {
+
+    useEffect(() => {
+        if (initData) {
+            setState({
+                ...initData,
+                date: getFormattedDate(new Date(parseInt(initData.date))),
+            })
+        }
+    }, [initData]);
+
+    const handleChangeDate = (e) => {
         setState({
             ...state,
             date: e.target.value,
         });
     }
-    const handleChanageContent = (e) => {
+    const handleChangeContent = (e) => {
         setState({
             ...state,
             content: e.target.value,
@@ -29,16 +39,33 @@ const Editor = ({initData, onSubmit}) => {
     const handleOnGoBack = () => {
         navigate(-1);
     }
+
+    const handleChangeEmotion = (emotionId) => {
+        setState({
+            ...state,
+            emotionId
+        })
+    }
     return (
         <div className="nes-container with-title is-centered Editor">
             <div className="editor-section">
                 <h4>오늘의 날짜</h4>
                 <div className="input-wrapper">
-                    <input type="date" value={state.date} onChange={handleChanageDate}/>
+                    <input type="date" value={state.date} onChange={handleChangeDate}/>
                 </div>
             </div>
             <div className="editor-section">
                 <h4>오늘의 감정</h4>
+                <div className="input-wrapper emotion-list-wrapper">
+                    {emotionList.map((it) =>
+                        <EmotionItem
+                            key={it.id}
+                            {...it}
+                            onClick={handleChangeEmotion}
+                            isSelected={state.emotionId === it.id}
+                        />
+                    )}
+                </div>
             </div>
             <div className="editor-section">
                 <h4>오늘의 일기</h4>
@@ -47,7 +74,7 @@ const Editor = ({initData, onSubmit}) => {
                         className="nes-textarea"
                         placeholder="오늘은 어땟나요?"
                         value={state.content}
-                        onChange={handleChanageContent}
+                        onChange={handleChangeContent}
                     />
                 </div>
             </div>

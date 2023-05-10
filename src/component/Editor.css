@@ -12,10 +12,15 @@
     font-size: 20px;
     back-ground-color: #ececec;
     padding: 20px;
-    border-image-repeat: stretch;
+    /*border-image-repeat: stretch;*/
 }
 .Editor .bottom-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.Editor .emotion-list-wrapper {
+    display: flex;
+    justify-content: space-around;
+    gap: 2%;
 }
