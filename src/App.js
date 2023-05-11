@@ -40,13 +40,13 @@ const mockData = [
     {
         id: "mk2",
         date: new Date().getTime()-2,
-        content: "mk1",
+        content: "mk2",
         emotionId: 2,
     },
     {
         id: "mk3",
         date: new Date().getTime()-3,
-        content: "mk1",
+        content: "mk3",
         emotionId: 3,
     },
 
