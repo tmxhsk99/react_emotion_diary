@@ -91,3 +91,20 @@ export const emotionList = [
         imgOn: getEmotionClickedImgById(5)
     },
 ]
+/**
+ * 해당 월의 시작과 끝을 나타내는 타임스탬프를 반환한다.
+ * @param date
+ * @returns {{endTimeStamp: number, beginTimeStamp: number}}
+ */
+export const getMonthRangeByDate = (date) => {
+    const beginTimeStamp = new Date(date.getFullYear(), date.getMonth(), 1).getTime();
+    const endTimeStamp = new Date(
+        date.getFullYear(),
+        date.getMonth() + 1,
+        0,
+        23,
+        59,
+        59
+    ).getTime();
+    return {beginTimeStamp, endTimeStamp};
+};
