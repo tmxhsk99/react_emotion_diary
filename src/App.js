@@ -11,6 +11,10 @@ function reducer(state, action) {
         case "CREATE" : {
             return [action.data, ...state];
         }
+        case "UPDATE" : {
+            return state.map((it) => String(it.id) === String(action.data.id) ? {...action.data} : it
+            )
+        }
         default: {
             return state;
         }
@@ -21,7 +25,7 @@ function reducer(state, action) {
 function App() {
     const [data, dispatch] = useReducer(reducer, []);
     const idRef = useRef(0);
-    const onCreate = (date, content, emotionId) =>{
+    const onCreate = (date, content, emotionId) => {
         dispatch({
             type: "CREATE",
             data: {
@@ -34,6 +38,19 @@ function App() {
         idRef.current += 1
 
     }
+
+    const onUpdate = (targetId, date, content, emotionId) => {
+        dispatch({
+            type: "UPDATE",
+            data: {
+                id: targetId,
+                date: new Date(date).getTime(),
+                content,
+                emotionId
+            }
+        });
+    }
+
     return (
         <div className="App">
             <Routes>
