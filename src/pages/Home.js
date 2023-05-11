@@ -1,10 +1,9 @@
-import {useSearchParams} from "react-router-dom";
 import Button from "../component/Button";
 import Header from "../component/Header";
-import Editor from "../component/Editor";
 import {useContext, useEffect, useState} from "react";
 import {DiaryStateContext} from "../App";
 import {getMonthRangeByDate} from "../util";
+import DiaryList from "../component/DiaryList";
 
 const Home = () => {
     const data = useContext(DiaryStateContext);
@@ -38,6 +37,7 @@ const Home = () => {
                 leftChild={<Button text={"<"} onClick={onDecreaseMonth}/>}
                 rigthChild={<Button text={">"} onClick={onIncreaseMonth}/>}
             />
+            <DiaryList data={filteredData}/>
         </div>
     );
 };

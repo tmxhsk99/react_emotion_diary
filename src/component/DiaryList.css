@@ -1,0 +1,26 @@
+.DiaryList{
+
+}
+
+.DiaryList .menu-wrapper {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.DiaryList .menu-wrapper .left-col{
+    margin-left: 10px;
+    padding-right: 5px;
+}
+.DiaryList .menu-wrapper .left-col div select{
+    border-image-repeat: stretch;
+    font-size: 18px;
+}
+
+.DiaryList .menu-wrapper .right-col {
+    flex-grow: 1;
+}
+.DiaryList .menu-wrapper .right-col button {
+    width: 100%;
+}
