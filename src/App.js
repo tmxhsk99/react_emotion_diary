@@ -4,10 +4,16 @@ import New from "./pages/New";
 import Diary from "./pages/Diary";
 import Edit from "./pages/Edit";
 import {Route, Routes} from "react-router-dom";
-import {useReducer, useRef} from "react";
+import React,{useEffect, useReducer, useRef, useState} from "react";
+
+export const DiaryStateContext = React.createContext();
+export const DiaryDispatchContext = React.createContext();
 
 function reducer(state, action) {
     switch (action.type) {
+        case "INIT": {
+            return action.data;
+        }
         case "CREATE" : {
             return [action.data, ...state];
         }
@@ -22,12 +28,41 @@ function reducer(state, action) {
             return state;
         }
     }
-    return state;
 }
 
+const mockData = [
+    {
+        id: "mk1",
+        date: new Date().getTime(),
+        content: "mk1",
+        emotionId: 1,
+    },
+    {
+        id: "mk2",
+        date: new Date().getTime(),
+        content: "mk1",
+        emotionId: 2,
+    },
+    {
+        id: "mk3",
+        date: new Date().getTime(),
+        content: "mk1",
+        emotionId: 3,
+    },
+
+]
+
 function App() {
+    const [isDataLoaded, setIsDataLoaded] = useState(false);
     const [data, dispatch] = useReducer(reducer, []);
     const idRef = useRef(0);
+    useEffect(() => {
+        dispatch({
+            type: "INIT",
+            data: mockData,
+        });
+        setIsDataLoaded(true);
+    }, []);
     const onCreate = (date, content, emotionId) => {
         dispatch({
             type: "CREATE",
@@ -60,17 +95,29 @@ function App() {
             targetId,
         });
     }
+    if (!isDataLoaded) {
+        return <div>데이터를 불러오는 중 입니다.</div>
+    } else {
+        return (
+            <DiaryStateContext.Provider value={data}>
+                <DiaryDispatchContext.Provider value={{
+                    onCreate,
+                    onUpdate,
+                    onDelete
+                }}>
+                    <div className="App">
+                        <Routes>
+                            <Route path="/" element={<Home/>}/>
+                            <Route path="/new" element={<New/>}/>
+                            <Route path="/diary/:id" element={<Diary/>}/>
+                            <Route path="/edit" element={<Edit/>}/>
+                        </Routes>
+                    </div>
+                </DiaryDispatchContext.Provider>
+            </DiaryStateContext.Provider>
+        );
+    }
 
-    return (
-        <div className="App">
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/new" element={<New/>}/>
-                <Route path="/diary/:id" element={<Diary/>}/>
-                <Route path="/edit" element={<Edit/>}/>
-            </Routes>
-        </div>
-    );
 }
 
 export default App;
