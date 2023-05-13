@@ -63,30 +63,40 @@ export const emotionList = [
     {
         id:1,
         name: "완전 좋음",
+        characterName: "퀵 맨",
+        characterScript: "완전 좋아!!!",
         img: getEmotionImgById(1),
         imgOn: getEmotionClickedImgById(1)
     },
     {
         id:2,
         name: "좋음",
+        characterName: "히트맨",
+        characterScript: "좋다 좋아! 불타오른다!!",
         img: getEmotionImgById(2),
         imgOn: getEmotionClickedImgById(2)
     },
     {
         id:3,
         name: "그럭저럭",
+        characterName: "에어맨",
+        characterScript: "흠...그럭저럭이군...",
         img: getEmotionImgById(3),
         imgOn: getEmotionClickedImgById(3)
     },
     {
         id:4,
         name: "나쁨",
+        characterName: "플래시맨",
+        characterScript: "기분이 나쁘다!!!",
         img: getEmotionImgById(4),
         imgOn: getEmotionClickedImgById(4)
     },
     {
         id: 5,
         name: "끔찍함",
+        characterName: "우드맨",
+        characterScript: "기분이 끔찍히 나쁘다!!!!",
         img: getEmotionImgById(5),
         imgOn: getEmotionClickedImgById(5)
     },
