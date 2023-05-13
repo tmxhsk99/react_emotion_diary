@@ -49,7 +49,18 @@ const mockData = [
         content: "mk3",
         emotionId: 3,
     },
-
+    {
+        id: "mk4",
+        date: new Date().getTime()-4,
+        content: "mk4",
+        emotionId: 4,
+    },
+    {
+        id: "mk5",
+        date: new Date().getTime()-5,
+        content: "mk5",
+        emotionId: 5,
+    },
 ]
 
 function App() {
