@@ -117,12 +117,14 @@ function App() {
                     onDelete
                 }}>
                     <div className="App">
+                        <div className="nes-container is-dark">
                         <Routes>
                             <Route path="/" element={<Home/>}/>
                             <Route path="/new" element={<New/>}/>
                             <Route path="/diary/:id" element={<Diary/>}/>
                             <Route path="/edit/:id" element={<Edit/>}/>
                         </Routes>
+                        </div>
                     </div>
                 </DiaryDispatchContext.Provider>
             </DiaryStateContext.Provider>
