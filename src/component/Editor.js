@@ -49,8 +49,8 @@ const Editor = ({initData, onSubmit}) => {
     return (
         <div className="nes-container with-title is-centered Editor">
             <div className="editor-section">
-                <h4>오늘의 날짜</h4>
-                <div className="input-wrapper">
+                <div className="nes-container is-dark with-title black-description-box calendar-wrapper">
+                    <span className="title">오늘의 날짜</span>
                     <input type="date" value={state.date} onChange={handleChangeDate}/>
                 </div>
             </div>

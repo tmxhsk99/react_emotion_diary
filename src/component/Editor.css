@@ -1,5 +1,7 @@
 .Editor {
+    background-color: white;
 }
+
 .Editor .editor-section {
     margin-bottom: 40px;
 }
@@ -8,19 +10,39 @@
     font-size: 22px;
     font-weight: bold;
 }
+
 .Editor .input-wrapper .nes-textarea {
     font-size: 20px;
     back-ground-color: #ececec;
     padding: 20px;
-    /*border-image-repeat: stretch;*/
+    border-image-repeat: stretch;
 }
+
 .Editor .bottom-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .Editor .emotion-list-wrapper {
     display: flex;
     justify-content: space-around;
     gap: 2%;
+}
+
+.Editor .editor-section .calendar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start
+}
+.Editor .editor-section > .calendar-wrapper input{
+    display: flex;
+}
+.Editor .editor-section > .input-wrapper span{
+   white-space: nowrap;
+}
+
+.black-description-box {
+    box-shadow: 0 0 0 3px #000;
+    min-width: 400px;
 }

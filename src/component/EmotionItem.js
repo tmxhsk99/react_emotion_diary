@@ -8,7 +8,7 @@ const EmotionItem = ({id, img, imgOn, name, onClick, isSelected}) => {
 
     return (
         <div className={[
-            "EmotionItem", isSelected ? `nes-container with-title is-centered EmotionItem-on-${id}` : `EmotionItem-off`
+            "EmotionItem", isSelected ? `EmotionItem-on-${id}` : `EmotionItem-off`
         ].join(" ")}
              onClick={handleOnClick}
         >

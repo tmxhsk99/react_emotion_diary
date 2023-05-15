@@ -1,6 +1,5 @@
 .EmotionItem {
-    border-radius: 5px;
-    padding: 20px;
+    padding: 2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,11 +8,13 @@
 
 .EmotionItem img {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .EmotionItem span{
-    font-size: 18px;
+    font-size: 14px;
+    white-space: nowrap;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .EmotionItem-off{
@@ -36,6 +37,23 @@
     background-color: #fd8446;
 }
 
-.EmotionItem-on-5{
+.EmotionItem-on-5 {
     background-color: #fd565f;
+    padding: 2px 8px 2px 7px;
 }
+.EmotionItem-on-1 span{
+    padding-top: 10px;
+}
+.EmotionItem-on-2 span{
+    padding-top: 10px;
+}
+.EmotionItem-on-3 span{
+    padding-top: 10px;
+}
+.EmotionItem-on-4 span{
+    padding-top: 10px;
+}
+.EmotionItem-on-5 span{
+    padding-top: 10px;
+}
+
