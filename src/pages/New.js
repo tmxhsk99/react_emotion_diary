@@ -12,7 +12,6 @@ const New = () => {
         navigate(-1);
     }
     const onSubmit = (data) => {
-        console.log(data);
         const {date, content, emotionId} = data;
         const calculableDate = new Date(date);
         onCreate(calculableDate, content, emotionId);
