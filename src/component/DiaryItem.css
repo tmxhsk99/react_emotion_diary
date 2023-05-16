@@ -4,6 +4,7 @@
     border-bottom: 1px solid #e2e2e2;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .DiaryItem .img-section .img-wrapper{
     min-width: 120px;
@@ -44,13 +45,14 @@
 .DiaryItem .info-section {
     flex-grow: 1;
     margin-left: 20px;
+    width: 180px;
 }
 .DiaryItem .info-section .date-wrapper {
     font-weight: bold;
     font-size: 20px;
 }
 .DiaryItem .info-section .content-wrapper{
-    font-size: 18px;
+    font-size: 13px;
 }
 .DiaryItem .button-section {
     min-width: 70px;
