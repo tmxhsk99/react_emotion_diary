@@ -54,8 +54,8 @@ const Editor = ({initData, onSubmit}) => {
                     <input type="date" value={state.date} onChange={handleChangeDate}/>
                 </div>
             </div>
-            <div className="editor-section">
-                <h4>오늘의 감정</h4>
+            <div className="nes-container is-dark with-title black-description-box editor-section">
+                <h4 className="title">오늘의 감정</h4>
                 <div className="input-wrapper emotion-list-wrapper">
                     {emotionList.map((it) =>
                         <EmotionItem
