@@ -1,5 +1,5 @@
 import "./Editor.css";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {emotionList, getFormattedDate} from "../util";
 import Button from "../component/Button";
 import {useNavigate} from "react-router-dom";
@@ -40,12 +40,12 @@ const Editor = ({initData, onSubmit}) => {
         navigate(-1);
     }
 
-    const handleChangeEmotion = (emotionId) => {
-        setState({
+    const handleChangeEmotion = useCallback((emotionId) => {
+        setState((state) => ({
             ...state,
             emotionId
-        })
-    }
+        }));
+    },[]);
     return (
         <div className="nes-container with-title is-centered Editor">
             <div className="editor-section">
