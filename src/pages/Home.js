@@ -23,7 +23,7 @@ const Home = () => {
         } else {// 등록한 일기가 없는경우
             setFilteredData([]);
         }
-    }, []);
+    }, [pivotDate]);
     const onIncreaseMonth = () => {
         setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() + 1));
     };
