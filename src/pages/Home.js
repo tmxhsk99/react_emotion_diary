@@ -2,7 +2,7 @@ import Button from "../component/Button";
 import Header from "../component/Header";
 import {useContext, useEffect, useState} from "react";
 import {DiaryStateContext} from "../App";
-import {getMonthRangeByDate} from "../util";
+import {getMonthRangeByDate, setPageTitle} from "../util";
 import DiaryList from "../component/DiaryList";
 
 const Home = () => {
@@ -12,6 +12,7 @@ const Home = () => {
     const headerTitle = `${pivotDate.getFullYear()}년
                                    ${pivotDate.getMonth() + 1}월`
     useEffect(() => {
+        setPageTitle("록맨 감정 일기장");
         if (data.length >= 1) {// 전체 일기에서 해당 월에 해당하는 일기만 필터링 한다.
             const {beginTimeStamp, endTimeStamp} = getMonthRangeByDate(pivotDate);
             setFilteredData(
@@ -22,7 +23,7 @@ const Home = () => {
         } else {// 등록한 일기가 없는경우
             setFilteredData([]);
         }
-    }, []);
+    }, [pivotDate]);
     const onIncreaseMonth = () => {
         setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() + 1));
     };
