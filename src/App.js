@@ -51,7 +51,7 @@ function App() {
             return;
         }
         localData.sort((a, b) => Number(b.id) - Number(a.id));
-        idRef.current = localData[0].id + 1;
+        idRef.current = Number(localData[0].id) + 1;
 
         dispatch({type:"INIT", data: localData});
         setIsDataLoaded(true);
@@ -68,7 +68,7 @@ function App() {
                 emotionId,
             },
         });
-        idRef.current += 1
+        idRef.current += 1;
 
     }
 
