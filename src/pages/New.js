@@ -4,7 +4,7 @@ import Button from "../component/Button";
 import Editor from "../component/Editor";
 import {useContext, useEffect} from "react";
 import {DiaryDispatchContext} from "../App";
-import {setPageTitle} from "../util";
+import {dateStringToCalcTimeStamp, setPageTitle} from "../util";
 
 const New = () => {
     const {onCreate} = useContext(DiaryDispatchContext);
@@ -15,9 +15,10 @@ const New = () => {
     useEffect(() =>{
         setPageTitle("새 일기 쓰기");
     },[])
+
     const onSubmit = (data) => {
         const {date, content, emotionId} = data;
-        const calculableDate = new Date(date);
+        const calculableDate = dateStringToCalcTimeStamp(date);
         onCreate(calculableDate, content, emotionId);
         navigate("/",{replace: true});
     }
