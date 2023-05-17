@@ -1,5 +1,5 @@
 import "./Editor.css";
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 import {emotionList, getFormattedDate} from "../util";
 import Button from "../component/Button";
 import {useNavigate} from "react-router-dom";
@@ -11,8 +11,10 @@ const Editor = ({initData, onSubmit}) => {
         emotionId: 3,
         content: "",
     });
+    const textArearRef = useRef(null);
 
     useEffect(() => {
+        textArearRef.current.focus();
         if (initData) {
             setState({
                 ...initData,
@@ -33,7 +35,21 @@ const Editor = ({initData, onSubmit}) => {
             content: e.target.value,
         });
     }
+    const validateDairyData = ({content}) => {
+        let result = {result: true};
+        if(content === ""){
+            result.msg = "일기내용이 입력되지 않았습니다.";
+            result.result = false;
+        }
+        return result;
+    };
     const handleSubmit = () => {
+        let validateResult = validateDairyData(state);
+        if(!validateResult.result){
+            alert(validateResult.msg);
+            textArearRef.current.focus();
+            return false;
+        }
         onSubmit(state);
     }
     const handleOnGoBack = () => {
@@ -71,6 +87,7 @@ const Editor = ({initData, onSubmit}) => {
                 <h4>오늘의 일기</h4>
                 <div className="input-wrapper">
                     <textarea
+                        ref={textArearRef}
                         className="nes-textarea"
                         placeholder="오늘은 어땟나요?"
                         value={state.content}
