@@ -60,6 +60,9 @@
     background-position: center;
     background-size: cover;
 }
+.emotion-img-wrapper-5 img{
+    padding-top: 90px;
+}
 .black-description-box {
     box-shadow: 0 0 0 3px #000;
     min-width: 400px;
