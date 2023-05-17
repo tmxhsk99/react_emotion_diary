@@ -123,3 +123,32 @@ export const setPageTitle = (title) => {
     const titleElement = document.getElementsByTagName("title")[0];
     titleElement.innerText = title;
 }
+
+export const convertToISO8601 = (year, month, day, hours, minutes, seconds) => {
+    // 월은 0부터 시작하므로 1을 빼줍니다.
+    month -= 1;
+
+    // Date 객체를 생성하여 입력된 년, 월, 일, 시간, 분, 초 값을 기반으로 설정합니다.
+    var date = new Date(year, month, day, hours, minutes, seconds);
+
+    // Date 객체를 ISO 8601 형식의 문자열로 변환합니다.
+    var iso8601String = date.toISOString();
+
+    return iso8601String;
+}
+
+const YYYYMMddRegex = /^\d{4}-\d{2}-\d{2}$/;
+/**
+ * YYYY-MM-dd 형식의 문자열을 현재 시간을 붙여서 계산 가능한 타임스탬프값으로 파싱하는 함수
+ * @param date
+ * @returns {*}
+ */
+export const dateStringToCalcTimeStamp = (date)  =>{
+    if(YYYYMMddRegex.test(date)){
+        const currentDate = new Date();
+        const dateArr = date.split("-");
+        const dateTimeString = convertToISO8601(dateArr[0], dateArr[1], dateArr[2], currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds());
+        return new Date(dateTimeString);
+    }
+    return date;
+}
