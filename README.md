@@ -14,13 +14,13 @@ https://rockman-emotion-diary.web.app/
 
 ### 해당 프로젝트 스크린샷
 * 홈페이지 (일기 리스트)
-  * ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/7439f7ef-1031-41cd-bd10-b05729e72f99)
+  ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/f162f068-0f21-4c08-a203-502f7ce8e8cd)
 
 * 일기 작성 페이지
-  * ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/9af99c86-7f03-4dc3-9427-51b196a4595d)
+  ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/dab4f948-5004-4d98-8779-b1ca34136975)
 
 * 일기 상세 페이지
-  * ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/2a928a6a-ca49-4a2b-aff4-78fcf9f3365a)
+  ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/b5490e40-c24d-4340-8726-65505240792f)
 
 ### 추후 개발할 수도 있는 기능
 1. 작성일기 내보내기 기능
