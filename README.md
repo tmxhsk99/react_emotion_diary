@@ -13,13 +13,20 @@
 https://rockman-emotion-diary.web.app/
 
 ### 해당 프로젝트 스크린샷
-* 홈페이지
-  ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/ae0b4e2c-25f3-4261-bb3c-4af7ce34fc82)
+* 홈페이지 (일기 리스트)
+  * ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/ae0b4e2c-25f3-4261-bb3c-4af7ce34fc82)
+
 * 일기 작성 페이지
-  ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/9af99c86-7f03-4dc3-9427-51b196a4595d)
+  * ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/9af99c86-7f03-4dc3-9427-51b196a4595d)
+
 * 일기 상세 페이지
-  ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/2a928a6a-ca49-4a2b-aff4-78fcf9f3365a)
+  * ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/2a928a6a-ca49-4a2b-aff4-78fcf9f3365a)
 
 ### 추후 개발할 수도 있는 기능
-* 작성일기 내보내기 기능 
-** 해당 일기내용은 브라우저 웹스토리지로 저장되기때문에 다양한 형식의 내보내기 기능 추가 필요가능성도 있기때문에 해당 기능 개발을 고려한다.
+1. 작성일기 내보내기 기능
+   * 해당 일기내용은 브라우저 웹스토리지로 저장되기때문에 다양한 형식의 내보내기 기능 추가 필요가능성도 있기때문에 해당 기능 개발을 고려한다.
+     * 내보내기 파일 형식
+       * json
+       * 엑셀
+       * html
+       * 이미지
