@@ -19,3 +19,7 @@ https://rockman-emotion-diary.web.app/
   ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/9af99c86-7f03-4dc3-9427-51b196a4595d)
 * 일기 상세 페이지
   ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/2a928a6a-ca49-4a2b-aff4-78fcf9f3365a)
+
+### 추후 개발할 수도 있는 기능
+* 작성일기 내보내기 기능 
+** 해당 일기내용은 브라우저 웹스토리지로 저장되기때문에 다양한 형식의 내보내기 기능 추가 필요가능성도 있기때문에 해당 기능 개발을 고려한다.
