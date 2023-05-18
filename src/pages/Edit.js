@@ -5,7 +5,7 @@ import React, {useContext, useEffect} from "react";
 import Button from "../component/Button";
 import Editor from "../component/Editor";
 import {DiaryDispatchContext} from "../App";
-import {setPageTitle} from "../util";
+import {dateStringToCalcTimeStamp, setPageTitle} from "../util";
 
 const Edit = () => {
     const {id} = useParams();
@@ -28,8 +28,8 @@ const Edit = () => {
     const onSubmit = (data) => {
         if (window.confirm("일기를 정말 수정할까요?")) {
             const {date, content, emotionId} = data;
-            const calculableDate = new Date(date);
-            onUpdate(id, calculableDate, content, emotionId);
+            const calculableDate = dateStringToCalcTimeStamp(date);
+            onUpdate(Number(id), calculableDate, content, emotionId);
             navigate("/", {replace: true});
         }
     }
