@@ -14,7 +14,7 @@ https://rockman-emotion-diary.web.app/
 
 ### 해당 프로젝트 스크린샷
 * 홈페이지 (일기 리스트)
-  * ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/ae0b4e2c-25f3-4261-bb3c-4af7ce34fc82)
+  * ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/7439f7ef-1031-41cd-bd10-b05729e72f99)
 
 * 일기 작성 페이지
   * ![image](https://github.com/tmxhsk99/react_emotion_diary/assets/43513435/9af99c86-7f03-4dc3-9427-51b196a4595d)
