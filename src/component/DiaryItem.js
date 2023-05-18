@@ -12,6 +12,9 @@ const DiaryItem = ({id, emotionId, content, date}) => {
     const goEdit = () => {
         navigate(`/edit/${id}`);
     }
+
+    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+
     return (
         <div className="DiaryItem">
             <div
@@ -34,7 +37,7 @@ const DiaryItem = ({id, emotionId, content, date}) => {
             </div>
             <div onClick={goDetail} className="info-section">
                 <div className="date-wrapper">
-                    {new Date(parseInt(date)).toLocaleDateString()}
+                    {new Date(parseInt(date)).toLocaleString('ko-KR', dateOptions)}
                 </div>
                 <div className="content-wrapper">
                     {content.slice(0, 25)}
